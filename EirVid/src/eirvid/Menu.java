@@ -22,7 +22,7 @@ public class Menu {
             System.out.println("2 - Login");
             System.out.println("3 - Movies available to rent");
             System.out.println("4 - Rental duration");
-            System.out.println("5 - 5 most rented movies");
+            System.out.println("5 - Five most rented movies");
             System.out.println("0 - Exit");
             System.out.print("Choice -> ");
             String input = scanner.nextLine();
