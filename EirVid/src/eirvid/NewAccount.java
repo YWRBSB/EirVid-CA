@@ -31,7 +31,7 @@ package eirvid;
             
             
             for (AccountInfo Account : NewAccount) {
-                    sql = String.format("INSERT INTO Account (Email, Password) VALUES ('%s', '%s', %d, %f);",
+                    sql = String.format("INSERT INTO Account (Email, Password) VALUES ('%s', '%s');",
                     
                     NewAccount.Email, NewAccount.Password);
                     stmt.executeUpdate(sql);
