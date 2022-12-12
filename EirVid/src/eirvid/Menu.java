@@ -4,17 +4,18 @@
  */
 package eirvid;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 /**
  *
  * @author Yuri
  */
-public class Menu {
+public class Menu   {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void showMainMenu() {
+    public static void showMainMenu() throws IOException {
 
         do {
             System.out.println("Welcome to EirVId");
@@ -35,6 +36,8 @@ public class Menu {
                     break;
                 case "3":
                     // call the class
+                    MoviesAvailable movies = new MoviesAvailable();
+                    System.out.println(movies);
                     break;
                      case "4":
                     // call the class
