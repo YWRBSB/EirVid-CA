@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  *
- * @author Yuri, Evelyn, Leisly, Thiago
+ * @author Yuri, Xiaohui Weng, Leisly, Thiago
  */
 public class EirVid {
 
