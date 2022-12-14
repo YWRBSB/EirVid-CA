@@ -8,6 +8,8 @@ package eirvid;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -17,7 +19,7 @@ import java.util.Scanner;
 public class MoviesAvailable {
 
     public MoviesAvailable() throws FileNotFoundException, IOException {
-        Scanner sc = new Scanner(new File("..//Movie_Metadata_Edited.csv"));
+        Scanner sc = new Scanner(new File("..//test.csv"));
 
         sc.useDelimiter(",");
 
@@ -27,5 +29,14 @@ public class MoviesAvailable {
         sc.close();
 
     }
-
+public List<String> getMovies (String line) {
+    List<String> movies = new ArrayList<String>();
+    try (Scanner rowScanner = new Scanner(line)) {
+        rowScanner.useDelimiter(",");
+        while (rowScanner.hasNext()) {
+            movies.add(rowScanner.next());
+        }
+    }
+    return movies;
+}
 }
