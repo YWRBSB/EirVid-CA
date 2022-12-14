@@ -21,10 +21,12 @@ public class MoviesAvailable {
     public MoviesAvailable() throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(new File("..//test.csv"));
 
-        sc.useDelimiter(",");
+       System.out.println("Movies Availabe");
+            System.out.println("----------------------");
 
         while (sc.hasNext()) {
-            System.out.print(sc.next());
+            
+            System.out.println(sc.next());
         }
         sc.close();
 
