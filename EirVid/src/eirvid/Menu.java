@@ -36,7 +36,7 @@ public class Menu   {
                     break;
                 case "2":
                     // call the class
-                    //eirvid.Login.LoginAuth();
+                    Login.loginAuth();
                     break;
                 case "3":
                     // call the class

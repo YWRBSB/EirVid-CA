@@ -4,40 +4,57 @@
  */
 package eirvid;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import java.util.Scanner;
 import java.sql.*;
+import java.sql.SQLException;
 
 /**
  *
  * @author Xiaohui Weng
  */
-public class Login {
-    String user = "";
-    String databasePassword = "";
+public class Login extends createDatabase{
+    public Login(){}
+    
+    public static Scanner sc = new Scanner(System.in);
+    
+    public static void loginAuth() throws SQLException{
+        
+//        String user;
+//        String databasePassword;
 
-    // Check Username and Password
-    System.out.print("Enter Username: ");
-    String name = sc.next();
-    System.out.print("Enter Password: ");
-    String password = sc.next();
+        // Check Username and Password
+        System.out.print("Enter Username or Email Address: ");
+        String email = sc.next();
+        System.out.print("Enter Password: ");
+        String password = sc.next();
 
-            // Create SQL Query
-            Statement stmt = connection.createStatement();
-    String SQL = "SELECT * FROM users WHERE users_name='" + name + "' && users_password='" + password+ "'";
+        //connect java to mysql database
+       try (Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/",user,databasePassword); 
+             Statement stmt = conn.createStatement()) {
+        
+        // Create SQL Query
+        sql = "SELECT * FROM userAccount.useInfo WHERE email='" + email + "' && password='" + password+ "'";
 
-    ResultSet rs = stmt.executeQuery(SQL);
+        ResultSet rs = stmt.executeQuery(sql);
 
-            // Check Username and Password
-    while (rs.next()) {
-        user = rs.getString("users_name");
-        databasePassword = rs.getString("users_password");
+        // Check Username and Password
+        while (rs.next()) {
+            user = rs.getString("email");
+            databasePassword = rs.getString("password");
+        }
+
+        if (email.equals(user) && password.equals(databasePassword)) {
+            System.out.println("Successful Login!\n----");
+        } else {
+            System.out.println("Incorrect Password\n----");
+        }
+    
     }
-
-    if (name.equals(user) && password.equals(databasePassword)) {
-        System.out.println("Successful Login!\n----");
-    } else {
-        System.out.println("Incorrect Password\n----");
-    }
-    
-    
-    
+}
 }
