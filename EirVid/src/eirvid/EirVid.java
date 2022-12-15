@@ -19,6 +19,8 @@ public class EirVid {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
+        // call the Database function, when the first user starts to run the project
+        //which will create the database for uses automatically 
         createDatabase.Database();
         Menu.showMainMenu();
     }
