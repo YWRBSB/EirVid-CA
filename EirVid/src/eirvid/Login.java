@@ -25,8 +25,6 @@ public class Login extends createDatabase{
     
     public static void loginAuth() throws SQLException{
         
-//        String user;
-//        String databasePassword;
 
         // Check Username and Password
         System.out.print("Enter Username or Email Address: ");
