@@ -6,6 +6,7 @@ package eirvid;
 
 import java.io.IOException;
 import java.util.Scanner;
+import java.sql.*;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Menu   {
     public static Scanner scanner = new Scanner(System.in);
 
     public static void showMainMenu() throws IOException {
+        
 
         do {
             System.out.println("Welcome to EirVId");
@@ -30,9 +32,11 @@ public class Menu   {
 
             switch (input) {
                 case "1":
+                //NewDatabase database = new NewDatabase();
                     break;
                 case "2":
                     // call the class
+                    //eirvid.Login.LoginAuth();
                     break;
                 case "3":
                     // call the class
