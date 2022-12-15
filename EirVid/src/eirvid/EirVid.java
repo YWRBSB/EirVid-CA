@@ -5,6 +5,8 @@
 package eirvid;
 
 import java.io.IOException;
+import java.sql.*;
+
 
 /**
  *
@@ -17,7 +19,7 @@ public class EirVid {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        
+        createDatabase.Database();
         Menu.showMainMenu();
     }
     
