@@ -32,10 +32,10 @@ public class Menu   {
 
             switch (input) {
                 case "1":
-                //NewDatabase database = new NewDatabase();
+                //Create new account and store the information into mysql database
                     break;
                 case "2":
-                    // call the class
+                    // call Login function
                     Login.loginAuth();
                     break;
                 case "3":
