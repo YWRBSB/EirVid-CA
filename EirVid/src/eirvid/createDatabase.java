@@ -13,6 +13,7 @@ public class createDatabase {
      protected static String sql;
      protected static String user ="root";
      protected static String databasePassword ="root";
+     //for someone will check the code, please remember to change user && databasePassword of yours
      protected static String email;
      protected static String password;
 
