@@ -42,7 +42,7 @@ public class SignUp extends createDatabase {
                     sql = "INSERT INTO userinfo (email, password)" + "VALUES ('" + email + "','" + password + "')";
                 
                     stmt.executeUpdate(sql);
-                    System.out.println("Success!");  
+                    System.out.println("Account created with success!");  
                 }myKB.nextLine();
             }
         }catch(SQLException e){
