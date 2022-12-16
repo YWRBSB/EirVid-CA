@@ -28,9 +28,9 @@ public class Login extends createDatabase{
 
         // Check Username and Password
         System.out.print("Enter Username or Email Address: ");
-        String email = sc.next();
+        email = sc.next();
         System.out.print("Enter Password: ");
-        String password = sc.next();
+        password = sc.next();
 
         //connect java to mysql database
        try (Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/",user,databasePassword); 

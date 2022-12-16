@@ -33,6 +33,7 @@ public class Menu   {
             switch (input) {
                 case "1":
                 //Create new account and store the information into mysql database
+                NewAccount.CreateAccount();
                     break;
                 case "2":
                     // call Login function
