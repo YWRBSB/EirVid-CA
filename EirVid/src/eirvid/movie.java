@@ -30,7 +30,7 @@ import java.util.List;
 public class movie {
     public static void main(String[] args) {
         // read the CSV file with the list of movies
-        List<movie> movies = readMoviesFromCSV("movies.csv");
+        List<movie> movies = readMoviesFromCSV("Movie_Metadata_Edited.csv");
 
         // print the list of movies
         for (movie movie : movies) {
