@@ -4,10 +4,18 @@
  */
 package eirvid;
 
+import java.util.Timer;
+
 /**
  *
  * @author Yuri
  */
 public class RentalDuration {
-    
+    public static void main(String[] args) {
+        Timer timer = new Timer();
+        movieDuration task = new movieDuration();
+        
+        
+        timer.schedule(task, 0 , 60000);
+    }
 }
