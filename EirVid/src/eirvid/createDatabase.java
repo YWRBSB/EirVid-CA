@@ -6,7 +6,7 @@ import java.sql.*;
 public class createDatabase {
 
     /**
-     * author: xiaohui weng
+     * author: xiaohui weng 2020387
      */
 
 

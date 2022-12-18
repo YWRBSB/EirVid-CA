@@ -16,7 +16,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author Xiaohui Weng
+ * @author Xiaohui Weng 2020387
  */
 public class Login extends createDatabase{
     public Login(){}
@@ -42,6 +42,7 @@ public class Login extends createDatabase{
         ResultSet rs = stmt.executeQuery(sql);
 
         // Check Username and Password
+        //code references:https://stackoverflow.com/questions/15165024/java-mysql-create-a-login-authentication
         while (rs.next()) {
             user = rs.getString("email");
             databasePassword = rs.getString("password");
