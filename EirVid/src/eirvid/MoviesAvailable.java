@@ -4,9 +4,10 @@
  */
 package eirvid;
 
-
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,26 +20,42 @@ import java.util.Scanner;
 public class MoviesAvailable {
 
     public MoviesAvailable() throws FileNotFoundException, IOException {
-        Scanner sc = new Scanner(new File("..//test.csv"));
 
-       System.out.println("Movies Availabe");
-            System.out.println("----------------------");
+        String file = "..//Movie_Metadata_Edited.csv";
+        BufferedReader reader = null;
+        String line = " ";
 
-        while (sc.hasNext()) {
-            
-            System.out.println(sc.next());
+        try {
+            reader = new BufferedReader(new FileReader(file));
+            while ((line = reader.readLine()) != null) {
+
+                String[] row = line.split(",");
+
+                for (String index : row) {
+                    System.out.printf("%-10s", index);
+                }
+                System.out.println();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                reader.close();
+            } catch (IOException e) {
+
+                e.printStackTrace();
+            }
         }
-        sc.close();
+    }
 
-    }
-public List<String> getMovies (String line) {
-    List<String> movies = new ArrayList<String>();
-    try (Scanner rowScanner = new Scanner(line)) {
-        rowScanner.useDelimiter(",");
-        while (rowScanner.hasNext()) {
-            movies.add(rowScanner.next());
+    public List<String> getMovies(String line) {
+        List<String> movies = new ArrayList<String>();
+        try ( Scanner rowScanner = new Scanner(line)) {
+            rowScanner.useDelimiter(",");
+            while (rowScanner.hasNext()) {
+                movies.add(rowScanner.next());
+            }
         }
+        return movies;
     }
-    return movies;
-}
 }

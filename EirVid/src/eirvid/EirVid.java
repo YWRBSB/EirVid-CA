@@ -17,7 +17,7 @@ public class EirVid {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, SQLException {
         // TODO code application logic here
         // call the Database function, when the first user starts to run the project
         //which will create the database for uses automatically 
