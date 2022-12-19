@@ -12,7 +12,7 @@ public class FiveMost {
     //track all the informatio that users have rented
     //something that can track users history
   
-    
+    //(Thiago)//
     //Trying to work on the code below to find the most repeated element in the array to find the most rented movie//
     
     /*public static int mostFrequent(int[] arr, int n){
