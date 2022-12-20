@@ -24,6 +24,7 @@ public class Rent {
          
          Boolean choice = true;
    
+         // movie selection from the movies available
          int idSelected;
          
       do{
@@ -44,6 +45,8 @@ public class Rent {
           System.out.println("Congrats! You have rented the movie: " +idSelected +" for 1 minute.");
              }
       }  while (!choice); 
+     
+        // set the rent duration timer      
       try {
           for  (int t = 60 ; t > 0; t--){
             tr.sleep(1000);
