@@ -4,46 +4,41 @@
  */
 package eirvid;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Arrays;
+
 /**
  *
- * @author Yuri
+ * @author Thiago 2020327
  */
 public class FiveMost {
+    
+    public FiveMost() throws FileNotFoundException, IOException {
     //track all the informatio that users have rented
     //something that can track users history
   
-    //(Thiago)//
-    //Trying to work on the code below to find the most repeated element in the array to find the most rented movie//
+    //Trying to work on the code below to find the most repeated movies rented by users//
+    //Array to store movie titles selected by users//
+    //Titles written in array below are just examples. They should be inputs by the user from the class Rent//
+    String[] rented = {"Heat", "Balto", "Nixon", "Heat", "Heat", "Balto", "Nixon", "Heat", "Heat", "Nixon", "Heat"};
+         Arrays.sort(rented);
+         int counter = 0;
+         String aux=rented[0];
     
-    /*public static int mostFrequent(int[] arr, int n){
-        
-    int maxcount = 0;
-    int element_having_max_freq = 0;
-    for (int i = 0; i < n; i++) {
-      int count = 0;
-      for (int j = 0; j < n; j++) {
-        if (arr[i] == arr[j]) {
-          count++;
+    for(int i=0; i<rented.length; i++){
+        if(aux==rented[i])
+        {
+          counter++;  
         }
-      }
- 
-      if (count > maxcount) {
-        maxcount = count;
-        element_having_max_freq = arr[i];
-      }
+        else{
+            System.out.println("The movie " + aux + " was rented " + counter + " times");
+            counter=1;
+            aux=rented[i];
+        }
     }
- 
-    return element_having_max_freq;
-  }
- 
-  // Driver program
-  public static void main(String[] args)
-  {
-    int[] arr = { 40, 50, 30, 40, 50, 30, 30 };
-    int n = arr.length;
-    System.out.print(mostFrequent(arr, n));
-  }*/
+            System.out.println("The movie " + aux + " was rented " + counter + " times");
     
     
-    
+    }  
 }

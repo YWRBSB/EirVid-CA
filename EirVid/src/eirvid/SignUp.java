@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author thsan
+ * @author Thiago 2020327
  */
 public class SignUp extends createDatabase {
     
