@@ -19,47 +19,30 @@ import java.util.Scanner;
  */
 public class MoviesAvailable {
 
-    public MoviesAvailable() throws FileNotFoundException, IOException {
-      
+    public MoviesAvailable() throws FileNotFoundException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+
         String file = "src/Movie_Metadata_Edited.csv";
-        BufferedReader reader = null;
-        String line = " ";
+        MovieReader movieReader = new MovieReader();
+        DataParser dataParser = new DataParser();
+        MovieList movieList = new MovieList();
 
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            while ((line = reader.readLine()) != null) {
+        List<String> lines = movieReader.InputData(file);
+        List<MovieMap> movie = dataParser.ParseData(lines);
 
-                String[] row = line.split(",");
-
-                for (String index : row) {
-                    System.out.printf("%-10s", index);
-                }
-                System.out.println();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                Rent movieRent = new Rent();
-                reader.close();
-            } catch (IOException e) {
-
-                e.printStackTrace();
-            }
-        }
+        movieList.movieList(movie);
+        Rent movieRent = new Rent();
     }
+}
+class MovieMap {
+    String id;
+    String nameMovie;
+    String price;
+    String available;
 
-    public List<String> getMovies(String line) {
-        List<String> movies = new ArrayList<String>();
-        try ( Scanner rowScanner = new Scanner(line)) {
-            rowScanner.useDelimiter(",");
-            while (rowScanner.hasNext()) {
-                movies.add(rowScanner.next());
-            }
-        }
-        return movies;
+    public MovieMap(String id, String nameMovie, String price, String available) {
+        this.id = id;
+        this.nameMovie = nameMovie;
+        this.price = price;
+        this.available = available;
     }
-    
-    
-     
 }
