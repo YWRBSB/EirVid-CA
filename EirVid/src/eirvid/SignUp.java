@@ -39,7 +39,7 @@ public class SignUp extends createDatabase {
                     Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/useraccount",user,databasePassword);
                     Statement stmt = conn1.createStatement();
                     //mysql statement to insert user sig up record to database
-                    sql = "INSERT INTO userinfo (email, password)" + "VALUES ('" + email + "','" + password + "')";
+                    sql = "INSERT INTO useinfo (email, password)" + "VALUES ('" + email + "','" + password + "')";
                 
                     stmt.executeUpdate(sql);
                     System.out.println("Account created with success!");  

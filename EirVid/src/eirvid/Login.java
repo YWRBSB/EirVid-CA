@@ -10,6 +10,7 @@ package eirvid;
  * and open the template in the editor.
  */
 
+import java.io.IOException;
 import java.util.Scanner;
 import java.sql.*;
 import java.sql.SQLException;
@@ -23,7 +24,7 @@ public class Login extends createDatabase{
     
     public static Scanner sc = new Scanner(System.in);
     
-    public static void loginAuth() throws SQLException{
+    public static void loginAuth() throws SQLException, IOException{
         
 
         // ask user to input email and password
@@ -37,7 +38,7 @@ public class Login extends createDatabase{
              Statement stmt = conn.createStatement()) {
         
         // Create SQL Query
-        sql = "SELECT * FROM userAccount.useInfo WHERE email='" + email + "' && password='" + password+ "'";
+        sql = "SELECT * FROM useraccount.useInfo WHERE email='" + email + "' && password='" + password+ "'";
 
         ResultSet rs = stmt.executeQuery(sql);
 
@@ -50,6 +51,7 @@ public class Login extends createDatabase{
 
         if (email.equals(user) && password.equals(databasePassword)) {
             System.out.println("Successful Login!\n----");
+            MoviesAvailable movies = new MoviesAvailable();
         } else {
             System.out.println("Incorrect Password\n----");
         }

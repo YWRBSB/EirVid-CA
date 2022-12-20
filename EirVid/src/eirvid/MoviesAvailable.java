@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class MoviesAvailable {
 
     public MoviesAvailable() throws FileNotFoundException, IOException {
-
+      
         String file = "..//Movie_Metadata_Edited.csv";
         BufferedReader reader = null;
         String line = " ";
@@ -40,6 +40,7 @@ public class MoviesAvailable {
             e.printStackTrace();
         } finally {
             try {
+                Rent movieRent = new Rent();
                 reader.close();
             } catch (IOException e) {
 
@@ -58,4 +59,7 @@ public class MoviesAvailable {
         }
         return movies;
     }
+    
+    
+     
 }

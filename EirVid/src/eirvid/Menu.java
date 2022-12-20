@@ -23,7 +23,6 @@ public class Menu   {
             System.out.println("Welcome to EirVId");
             System.out.println("1 - Create new account");
             System.out.println("2 - Login");
-            System.out.println("3 - Movies available to rent");
             System.out.println("5 - Five most rented movies");
             System.out.println("0 - Exit");
             System.out.print("Choice -> ");
@@ -38,10 +37,6 @@ public class Menu   {
                     // call Login function
                     Login.loginAuth();
                     break;
-                case "3":
-                    // call the class
-                    MoviesAvailable movies = new MoviesAvailable();
-                     break;
                 case "4":
                     // call the class
                     break;
