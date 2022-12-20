@@ -1,27 +1,27 @@
-ID,original_title
-0,Heat
-1,Balto
-2,Nixon
-3,Casino
-4,Sense and Sensibility
-5,Leaving Las Vegas
-6,Twelve Monkeys
-7,Se7en
-8,The Usual Suspects
-9,A Midwinter's Tale
-10,The Bridges of Madison County
-11,Braveheart
-12,Taxi Driver
-13,Margaret's Museum
-14,Anne Frank Remembered
-15,The Basketball Diaries
-16,Apollo 13
-17,Crumb
-18,Living in Oblivion
-19,Reckless
-20,Safe
-21,Smoke
-22,Before the Rain
-23,Before Sunrise
-24,The Cure
-25,Clerks
+ID,original_title,price,available
+0,Heat,7.99,Available
+1,Balto,6.99,Available
+2,Nixon,6.99,Available
+3,Casino,7.99,Available
+4,Sense and Sensibility,6.99,Available
+5,Leaving Las Vegas,6.99,Available
+6,Twelve Monkeys,6.99,Available
+7,Se7en,7.99,Available
+8,The Usual Suspects,7.99,Available
+9,A Midwinter's Tale,7.99,Available
+10,The Bridges of Madison County,6.99,Available
+11,Braveheart,7.99,Available
+12,Taxi Driver,7.99,Available
+13,Margaret's Museum,7.99,Available
+14,Anne Frank Remembered,6.99,Available
+15,The Basketball Diaries,6.99,Available
+16,Apollo 13,6.99,Available
+17,Crumb,7.99,Available
+18,Living in Oblivion,6.99,Available
+19,Reckless,9.99,Available
+20,Safe,6.99,Available
+21,Smoke,6.99,Available
+22,Before the Rain,6.99,Available
+23,Before Sunrise,7.99,Available
+24,The Cure,6.99,Available
+25,Clerks,9.99,Available

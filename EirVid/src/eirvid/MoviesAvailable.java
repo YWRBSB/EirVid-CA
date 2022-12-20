@@ -21,7 +21,7 @@ public class MoviesAvailable {
 
     public MoviesAvailable() throws FileNotFoundException, IOException {
       
-        String file = "..//Movie_Metadata_Edited.csv";
+        String file = "src/Movie_Metadata_Edited.csv";
         BufferedReader reader = null;
         String line = " ";
 
