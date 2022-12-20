@@ -10,6 +10,7 @@ package eirvid;
  * and open the template in the editor.
  */
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.sql.*;
@@ -24,7 +25,7 @@ public class Login extends createDatabase{
     
     public static Scanner sc = new Scanner(System.in);
     
-    public static void loginAuth() throws SQLException, IOException{
+    public static void loginAuth() throws SQLException, IOException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException{
         
 
         // ask user to input email and password
