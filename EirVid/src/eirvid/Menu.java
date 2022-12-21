@@ -11,7 +11,7 @@ import java.sql.*;
 
 /**
  *
- * @author Yuri
+ * @author Yuri Ribeiro 2020347
  */
 public class Menu {
 
