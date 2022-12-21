@@ -4,6 +4,7 @@
  */
 package eirvid;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
 import java.sql.*;
@@ -12,12 +13,11 @@ import java.sql.*;
  *
  * @author Yuri
  */
-public class Menu   {
+public class Menu {
 
     public static Scanner scanner = new Scanner(System.in);
 
-    public static void showMainMenu() throws IOException, SQLException {
-        
+    public static void showMainMenu() throws IOException, SQLException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         do {
             System.out.println("Welcome to EirVId");
@@ -30,8 +30,8 @@ public class Menu   {
 
             switch (input) {
                 case "1":
-                //Create new account and store the information into mysql database
-                SignUp.CreateAccount();
+                    //Create new account and store the information into mysql database
+                    SignUp.CreateAccount();
                     break;
                 case "2":
                     // call Login function
@@ -39,6 +39,7 @@ public class Menu   {
                     break;
                 case "3":
                     // call the class
+
                     break;
                 case "0":
                     scanner.close();

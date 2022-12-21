@@ -4,6 +4,7 @@
  */
 package eirvid;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.*;
 
@@ -17,12 +18,12 @@ public class EirVid {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws IOException, SQLException {
+    public static void main(String[] args) throws IOException, SQLException, FileNotFoundException, InstantiationException, ClassNotFoundException, IllegalAccessException {
         // TODO code application logic here
         // call the Database function, when the first user starts to run the project
         //which will create the database for uses automatically 
         createDatabase.Database();
         Menu.showMainMenu();
-    }
+           }
     
 }

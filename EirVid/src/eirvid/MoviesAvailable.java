@@ -4,18 +4,13 @@
  */
 package eirvid;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  *
- * @author Yuri
+ * @author Yuri Ribeiro 2020347 and Leisly Pino 2020303
  */
 public class MoviesAvailable {
 
@@ -44,5 +39,21 @@ class MovieMap {
         this.nameMovie = nameMovie;
         this.price = price;
         this.available = available;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public String getNameMovie() {
+        return nameMovie;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getAvailable() {
+        return available;
     }
 }

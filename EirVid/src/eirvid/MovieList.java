@@ -9,12 +9,26 @@ import java.util.List;
 
 /**
  *
- * @author Leisly Pino 2020303
+ * @author Leisly Pino 2020303, Yuri Ribeiro 2020347
  */
 class MovieList {
+    
     public void movieList (List<MovieMap> movie) throws IOException{
         for (MovieMap movies: movie){
-            System.out.println(movies.id + "        "+ movies.nameMovie + "        "+movies.price + "        "+ movies.available);
+            System.out.println(returnId(movies.id) + "        "+ movies.nameMovie + "        "+movies.price + "        "+ movies.available);
         }
     }
+    
+    // return the movie ID from the csv on integer 1.
+    public String returnId(String id){
+        
+      
+      try {
+          return Integer.toString(Integer.valueOf(id)+1);
+        }catch (Exception e) {
+            return id;
+      }
 }
+
+}
+
