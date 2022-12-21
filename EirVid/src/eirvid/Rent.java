@@ -25,12 +25,15 @@ public class Rent {
     static Thread tr = new Thread();
 
     public Rent() throws IOException, SQLException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-
+        
+        // read the csv file
         String filecsv = "src/Movie_Metadata_Edited.csv";
         MovieReader movieReader = new MovieReader();
         DataParser dataParser = new DataParser();
         MovieList movieList = new MovieList();
-
+       
+        // create the file writer for the most rented movies
+       
          File file = new File("src/MostRented.txt");
          FileWriter fw = new FileWriter (file, true);
          PrintWriter pw = new PrintWriter(fw);
@@ -86,8 +89,7 @@ public class Rent {
         System.out.println("Your rent is over!");
         Rent movieRent = new Rent();
         
-        //This is a txt file that will keep the list of movies that the user have selected
-         //This is a txt file that will keep the list of movies that the user have selected
+       
         
          
          
