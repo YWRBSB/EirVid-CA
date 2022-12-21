@@ -4,9 +4,15 @@
  */
 package eirvid;
 
+import static com.sun.tools.attach.VirtualMachine.list;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
+import static java.nio.file.Files.list;
 import java.sql.SQLException;
+import static java.util.Collections.list;
 import java.util.List;
 import java.util.Scanner;
 
@@ -20,12 +26,16 @@ public class Rent {
 
     public Rent() throws IOException, SQLException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        String file = "src/Movie_Metadata_Edited.csv";
+        String filecsv = "src/Movie_Metadata_Edited.csv";
         MovieReader movieReader = new MovieReader();
         DataParser dataParser = new DataParser();
         MovieList movieList = new MovieList();
 
-        List<String> lines = movieReader.InputData(file);
+         File file = new File("src/MostRented.txt");
+         FileWriter fw = new FileWriter (file, true);
+         PrintWriter pw = new PrintWriter(fw);
+         
+        List<String> lines = movieReader.InputData(filecsv);
         List<MovieMap> movie = dataParser.ParseData(lines);
 
         Scanner userInput = new Scanner(System.in);
@@ -49,12 +59,14 @@ public class Rent {
             } else if (idSelected == 0) {
 
                 System.out.println("See you next time!");
-                choice = false;
-                Menu.showMainMenu();
+                choice = true;
+                Menu menu = new Menu();
+                menu.showMainMenu();
 
             } else {
                 choice = true;
-
+              pw.println(movie.get(idSelected).nameMovie);
+              pw.close();                 
                 System.out.println("Congratulations! You have rented the movie: " + movie.get(idSelected).nameMovie + "\nPrice:€ " + movie.get(idSelected).price + "\nThe duration of the rent is: 1 minute "
                         + "\n--------ENJOY!-------");
 
@@ -73,6 +85,12 @@ public class Rent {
 
         System.out.println("Your rent is over!");
         Rent movieRent = new Rent();
+        
+        //This is a txt file that will keep the list of movies that the user have selected
+         //This is a txt file that will keep the list of movies that the user have selected
+        
+         
+         
     }
 
 }

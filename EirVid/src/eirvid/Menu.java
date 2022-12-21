@@ -4,6 +4,7 @@
  */
 package eirvid;
 
+import static eirvid.FiveMost.fiveMost;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
@@ -38,7 +39,7 @@ public class Menu {
                     Login.loginAuth();
                     break;
                 case "3":
-                    // call the class
+                    fiveMost();
 
                     break;
                 case "0":
