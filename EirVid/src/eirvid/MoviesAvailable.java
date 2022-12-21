@@ -6,6 +6,7 @@ package eirvid;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -14,7 +15,7 @@ import java.util.List;
  */
 public class MoviesAvailable {
 
-    public MoviesAvailable() throws FileNotFoundException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public MoviesAvailable() throws FileNotFoundException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, SQLException {
 
         String file = "src/Movie_Metadata_Edited.csv";
         MovieReader movieReader = new MovieReader();

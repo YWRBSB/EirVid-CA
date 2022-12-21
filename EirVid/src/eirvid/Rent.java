@@ -4,8 +4,13 @@
  */
 package eirvid;
 
+import static eirvid.Menu.showMainMenu;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -16,7 +21,7 @@ public class Rent {
   
     static Thread tr = new Thread();
 
-    public Rent() throws IOException {
+    public Rent() throws IOException, SQLException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
        
         String file = "src/Movie_Metadata_Edited.csv";
         MovieReader movieReader = new MovieReader();
@@ -26,7 +31,7 @@ public class Rent {
         List<String> lines = movieReader.InputData(file);
         List<MovieMap> movie = dataParser.ParseData(lines);
 
-
+       
         
         Scanner userInput = new Scanner(System.in);
 
@@ -36,7 +41,8 @@ public class Rent {
         int idSelected;
         
         do {
-            System.out.println("PLEASE, SELECT THE ID TO RENT THE MOVIE:");
+            System.out.println("");
+            System.out.println("PLEASE, SELECT THE ID TO RENT THE MOVIE OR 0 TO EXIT:");
             idSelected = userInput.nextInt();
             System.out.println("");
             
@@ -46,10 +52,24 @@ public class Rent {
                 System.out.println("");
 
                 choice = false;
-            } else {
-                choice = true;
+            } 
+            
+            else if (idSelected == 0){
+               
+                System.out.println("See you next time!");
+                choice = false;
+                Menu.showMainMenu();
                 
-                System.out.println("Congratulations! You have rented the movie: " + movie.get(idSelected).nameMovie + "\nPrice:€ "+ movie.get(idSelected).price +"\nThe duration of the rent is: 1 minute");
+            }
+            else {
+                choice = true;
+               
+             
+               
+               
+                System.out.println("Congratulations! You have rented the movie: " + movie.get(idSelected).nameMovie + "\nPrice:€ "+ movie.get(idSelected).price +"\nThe duration of the rent is: 1 minute "
+                        + "\n--------ENJOY!-------");
+                
             }
         } while (!choice);
 
@@ -65,7 +85,8 @@ public class Rent {
         }
 
         System.out.println("Your rent is over!");
-
+        Rent movieRent = new Rent();
     }
 
 }
+
