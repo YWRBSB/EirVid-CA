@@ -4,15 +4,12 @@
  */
 package eirvid;
 
-import static com.sun.tools.attach.VirtualMachine.list;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
-import static java.nio.file.Files.list;
 import java.sql.SQLException;
-import static java.util.Collections.list;
 import java.util.List;
 import java.util.Scanner;
 
@@ -25,19 +22,18 @@ public class Rent {
     static Thread tr = new Thread();
 
     public Rent() throws IOException, SQLException, FileNotFoundException, ClassNotFoundException, InstantiationException, IllegalAccessException {
-        
+
         // read the csv file
         String filecsv = "src/Movie_Metadata_Edited.csv";
         MovieReader movieReader = new MovieReader();
         DataParser dataParser = new DataParser();
         MovieList movieList = new MovieList();
-       
+
         // create the file writer for the most rented movies
-       
-         File file = new File("src/MostRented.txt");
-         FileWriter fw = new FileWriter (file, true);
-         PrintWriter pw = new PrintWriter(fw);
-         
+        File file = new File("src/MostRented.txt");
+        FileWriter fw = new FileWriter(file, true);
+        PrintWriter pw = new PrintWriter(fw);
+
         List<String> lines = movieReader.InputData(filecsv);
         List<MovieMap> movie = dataParser.ParseData(lines);
 
@@ -68,8 +64,8 @@ public class Rent {
 
             } else {
                 choice = true;
-              pw.println(movie.get(idSelected).nameMovie);
-              pw.close();                 
+                pw.println(movie.get(idSelected).nameMovie);
+                pw.close();
                 System.out.println("Congratulations! You have rented the movie: " + movie.get(idSelected).nameMovie + "\nPrice:€ " + movie.get(idSelected).price + "\nThe duration of the rent is: 1 minute "
                         + "\n--------ENJOY!-------");
 
@@ -88,11 +84,7 @@ public class Rent {
 
         System.out.println("Your rent is over!");
         Rent movieRent = new Rent();
-        
-       
-        
-         
-         
+
     }
 
 }
