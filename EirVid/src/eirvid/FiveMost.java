@@ -14,28 +14,24 @@ import java.io.IOException;
  * @author Yuri Ribeiro 2020347 and Thiago 2020327
  */
 public class FiveMost {
- public static void  fiveMost() throws IOException{
-        
-       BufferedReader myReader = new BufferedReader(new FileReader("src/MostRented.txt"));
-       
-       System.out.println("----------LIST OF THE MOST RENTED MOVIES-----------");
-       
-       String line = myReader.readLine();
-       String [] lineArr;
 
-        
-       System.out.println(line);
-       
-      
+    public static void fiveMost() throws IOException {
 
-        
-     while ((line = myReader.readLine()) != null){
-             lineArr = line.split(",,");       
+        BufferedReader myReader = new BufferedReader(new FileReader("src/MostRented.txt"));
+
+        System.out.println("----------LIST OF THE MOST RENTED MOVIES-----------");
+
+        String line = myReader.readLine();
+        String[] lineArr;
+
+        System.out.println(line);
+
+        while ((line = myReader.readLine()) != null) {
+            lineArr = line.split(",,");
             System.out.println(lineArr[0]);
             System.out.println("----------------------------------------------------");
-    
-         }
- 
-   }
+
+        }
+
+    }
 }
-   
